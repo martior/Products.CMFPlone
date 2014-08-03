@@ -1,14 +1,9 @@
 # -*- coding: utf-8 -*-
-from plone.registry import Registry
-from Products.CMFPlone.interfaces import IEditingSchema
-import unittest2 as unittest
-
 from zope.component import getMultiAdapter
 from zope.component import getUtility
 from plone.registry.interfaces import IRegistry
 
 from Products.CMFCore.utils import getToolByName
-
 from Products.CMFPlone.interfaces import INavigationSchema
 from Products.CMFPlone.testing import \
     PRODUCTS_CMFPLONE_INTEGRATION_TESTING

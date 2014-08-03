@@ -6,6 +6,7 @@ from basetool import IPloneCatalogTool
 from controlpanel import IControlPanel
 from controlpanel import IDateAndTimeSchema
 from controlpanel import IEditingSchema
+from controlpanel import ILanguageSchema
 from controlpanel import IMaintenanceSchema
 from controlpanel import INavigationSchema
 from controlpanel import ISearchSchema

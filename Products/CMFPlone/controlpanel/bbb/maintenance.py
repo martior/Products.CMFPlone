@@ -1,5 +1,5 @@
+# -*- coding: utf-8 -*-
 from Products.CMFPlone.interfaces import IMaintenanceSchema
-from Products.CMFCore.utils import getToolByName
 from zope.component import adapts
 from zope.component import getUtility
 from zope.interface import implements

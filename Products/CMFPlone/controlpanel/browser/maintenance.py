@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from z3c.form import button
 import os
 from cgi import escape
