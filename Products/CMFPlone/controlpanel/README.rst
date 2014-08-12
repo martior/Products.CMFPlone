@@ -76,3 +76,13 @@ Site Control Panel
   >>> site_settings.exposeDCMetaTags = True
   >>> site_settings.enable_sitemap = True
   >>> site_settings.webstats_js = u'<script>a=1</script>'
+
+
+User and Groups Control Panel
+------------------
+
+  >>> from Products.CMFPlone.interfaces import IUserGroupsSettingsSchema
+  >>> usergroups_settings = registry.forInterface(IUserGroupsSettingsSchema, prefix='plone')
+
+  >>> usergroups_settings.many_groups = False
+  >>> usergroups_settings.many_users = False
