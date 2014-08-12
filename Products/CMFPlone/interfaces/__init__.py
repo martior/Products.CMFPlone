@@ -11,6 +11,7 @@ from controlpanel import INavigationSchema
 from controlpanel import ISearchSchema
 from controlpanel import ISiteSchema
 from controlpanel import ITypesSchema
+from controlpanel import IUserGroupsSettingsSchema
 from events import IConfigurationChangedEvent
 from events import ISiteManagerCreatedEvent
 from events import IReorderedEvent
