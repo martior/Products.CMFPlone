@@ -8,6 +8,17 @@ Changelog
 5.0a3 (unreleased)
 ------------------
 
+- usergroups controlpanel:
+
+  - Moved from plone.app.controlpanel in here.
+  - Transformed doctests into unit tests and added some more unit tests
+    for different edge cases.
+  - Added robot test for each part of usergroups controlpanel
+  - see also issues #221 and #184 at
+    https://github.com/plone/Products.CMFPlone/issues
+
+  [ferewuz]
+
 - Minor overhaul of CatalogTool.py - no feature changes!
   Optimizations and better readable code for indexer
   ``allowedRolesAndUsers``: now using a set.
@@ -16,7 +27,6 @@ Changelog
   Usage of AccessControl 3 style decorators for security declarations.
   Minor reformattings to make code-analysis happy.
   [jensens]
-
 
 - PLIP 13260: Migration cut, copy and paste into browser views.
   [saily]
