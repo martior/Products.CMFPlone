@@ -8,6 +8,17 @@ Changelog
 5.0a3 (unreleased)
 ------------------
 
+- usergroups controlpanel:
+
+  - Moved from plone.app.controlpanel in here.
+  - Transformed doctests into unit tests and added some more unit tests
+    for different edge cases.
+  - Added robot test for each part of usergroups controlpanel
+  - see also issues #221 and #184 at
+    https://github.com/plone/Products.CMFPlone/issues
+
+  [ferewuz]
+
 - type controlpanel: Resolved problem with workflow selection form as it 
   was breaking if state title had non-ascii characters. see also 
   https://github.com/plone/plone.app.controlpanel/pull/26
@@ -21,7 +32,6 @@ Changelog
   Usage of AccessControl 3 style decorators for security declarations.
   Minor reformattings to make code-analysis happy.
   [jensens]
-
 
 - PLIP 13260: Migration cut, copy and paste into browser views.
   [saily]
