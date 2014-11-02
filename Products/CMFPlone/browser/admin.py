@@ -1,5 +1,6 @@
 from AccessControl import getSecurityManager
 from AccessControl.Permissions import view as View
+from datetime import timedelta
 from OFS.interfaces import IApplication
 from Products.CMFCore.permissions import ManagePortal
 from Products.CMFPlone.factory import _DEFAULT_PROFILE
@@ -16,6 +17,7 @@ from plone.i18n.locales.interfaces import IContentLanguageAvailability
 from plone.keyring.interfaces import IKeyManager
 from plone.protect.authenticator import check as checkCSRF
 from plone.protect.interfaces import IDisableCSRFProtection
+from pytz import timezone
 from zope.component import adapts
 from zope.component import getAllUtilitiesRegisteredFor
 from zope.component import getUtility
@@ -28,6 +30,8 @@ from zope.interface import alsoProvides
 from zope.publisher.browser import BrowserView
 from zope.publisher.interfaces import IRequest
 from zope.schema.interfaces import IVocabularyFactory
+
+import time
 
 import logging
 LOGGER = logging.getLogger('Products.CMFPlone')
@@ -198,6 +202,22 @@ class AddPloneSite(BrowserView):
                      code, v in available.items()]
         languages.sort(key=itemgetter(1))
         return languages
+
+    def system_timezone(self):   
+        local_offset = time.timezone
+        localtz = time.tzname[0]     
+        if time.daylight:
+            local_offset = time.altzone
+            localtz = time.tzname[1]            
+        local_offset = timedelta(seconds=-local_offset)
+        for name in self.timezones():
+            tz = timezone(name)
+            if not hasattr(tz, '_tzinfos'):
+                continue
+            for (utcoffset, dst, tzname), _ in tz._tzinfos.iteritems():
+                if utcoffset == local_offset and tzname == localtz:
+                    return name
+        return ''
 
     def timezones(self):
         tz_vocab = getUtility(

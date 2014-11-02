@@ -104,10 +104,12 @@
         </div>
 
         <select name="portal_timezone"
-          tal:define="tz_list view/timezones">
+          tal:define="tz_list view/timezones;
+                      system_tz view/system_timezone">
           <option value="UTC"
                   tal:repeat="tz tz_list"
-                  tal:attributes="value tz"
+                  tal:attributes="value tz;
+                                  selected python:tz==system_tz"
                   tal:content="tz">
               UTC
           </option>
